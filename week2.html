@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WEEK 2 — SUMaC Preparatory Problem Set</title>
+<style>
+body { font-family: Georgia, serif; margin: 40px; line-height: 1.6; }
+h1, h2, h3 { font-family: Georgia, serif; }
+h1 { color: #1f4e79; }
+h2 { margin-top: 30px; color: #1f4e79; }
+h3 { margin-top: 20px; }
+.problem { margin-top: 30px; }
+.solution { margin-top: 40px; border-top: 2px solid #999; padding-top: 20px; }
+strong.label { font-weight: bold; }
+ul { margin-left: 25px; }
+</style>
+</head>
+<body>
+<h1>WEEK 2 — SUMaC Preparatory Problem Set</h1>
+
+<h2>PROOF-WRITING RUBRIC</h2>
+<p><strong>A. Structure (0–4)</strong></p>
+<ul>
+<li>Clear beginning, middle, and end to the argument.</li>
+<li>Logical sequencing of steps; each idea follows naturally from the previous one.</li>
+</ul>
+<p><strong>B. Rigor &amp; Correctness (0–4)</strong></p>
+<ul>
+<li>Every step is justified (algebraically, geometrically, or via a cited theorem).</li>
+<li>No gaps or unjustified leaps in logic.</li>
+<li>Final conclusion correctly answers the prompt.</li>
+</ul>
+<p><strong>C. Clarity (0–4)</strong></p>
+<ul>
+<li>Sentences are readable and coherent.</li>
+<li>Notation is consistent and standard.</li>
+<li>Explanations accompany symbolic steps, not only computations.</li>
+</ul>
+<p><strong>D. Insight / Strategy (0–4)</strong></p>
+<ul>
+<li>Choice of method is appropriate and efficient.</li>
+<li>Solution demonstrates mathematical insight.</li>
+</ul>
+
+<div class="problem">
+<h2>Problem 1 — Induction Inequality</h2>
+<p><strong class="label">What this is about:</strong> Mathematical induction is a method for proving statements that hold for all integers above a starting point. Think of it as a domino effect: if the first falls (base case) and each domino pushes the next, then all fall. Here, we’re proving an inequality involving exponential growth.</p>
+<p><strong class="label">Why it matters:</strong> Induction underlies proofs across number theory, combinatorics, and computer science. The skill of turning “the n-case → the (n+1)-case” is foundational.</p>
+<p><strong class="label">What the problem is really asking:</strong> Show that an exponential term 2<sup>n</sup> stays ahead of (or outpaces) a quadratic-like expression n<sup>2</sup> + n + 1. This blends algebraic manipulation with the structural logic of induction.</p>
+<p><strong class="label">The approachable idea:</strong> The key is to look at the difference between the two sides. When going from n to n+1, exponentials multiply by 2 — quadratics only grow by about 2n + 3. Understanding this growth rate difference makes the induction step transparent.</p>
+<p><strong class="label">Your task:</strong> Prove by induction that 2<sup>n</sup> ≥ n<sup>2</sup> + n + 1 for all integers n ≥ 5.</p>
+</div>
+
+<div class="problem">
+<h2>Problem 2 — Modular Squares (Number Theory)</h2>
+<p><strong class="label">What this is about:</strong> Modular arithmetic is like clock math: numbers “wrap around” after a certain modulus. Here, we study the behavior of perfect squares modulo 3.</p>
+<p><strong class="label">Why it matters:</strong> Modular reasoning appears constantly in number theory — from primality tests to cryptography. Understanding the behavior of squares mod small numbers builds intuition for larger structures.</p>
+<p><strong class="label">What the problem is really asking:</strong> Determine all possible remainders a square can have upon division by 3, and then use that fact to solve a structural number-theory question.</p>
+<p><strong class="label">The approachable idea:</strong> There are only three possible values mod 3: 0, 1, 2. Compute squares of representatives and classify them. This leads to a strong restriction: square mod 3 can only be 0 or 1.</p>
+<p><strong class="label">Your task:</strong></p>
+<ul>
+<li>Show that if n is an integer, then n<sup>2</sup> ≡ 0 or 1 (mod 3).</li>
+<li>Then use this to deduce that no integer of the form 3k + 2 can be a perfect square.</li>
+</ul>
+</div>
+
+<div class="problem">
+<h2>Problem 3 — Counting Seating Arrangements (Combinatorics)</h2>
+<p><strong class="label">What this is about:</strong> Arrangements and permutations are fundamental in combinatorics. This problem asks you to count how many ways to seat people under certain color constraints.</p>
+<p><strong class="label">Why it matters:</strong> Constraints transform simple counting into structured combinatorial reasoning. These ideas appear in probability, computer science, and algorithms.</p>
+<p><strong class="label">What the problem is really asking:</strong> Seat three green-shirt students first, then choose two specific seats for students wearing blue shirts. The sequence matters — position constraints limit choices.</p>
+<p><strong class="label">The approachable idea:</strong> Break the problem into sequential decisions: (1) Fix the greens in order. (2) Choose seats for blues. (3) Multiply the independent choices.</p>
+<p><strong class="label">Your task:</strong></p>
+<ul>
+<li>You have 5 seats in a row.</li>
+<li>Seats 1–3 must be filled by three green-shirt students (in a fixed order: G1, G2, G3).</li>
+<li>Seats 4–5 must be filled by two blue-shirt students (but choose which blue student goes where).</li>
+<li>Count the total number of valid arrangements.</li>
+</ul>
+</div>
+
+<div class="problem">
+<h2>Problem 4 — Functional Equation</h2>
+<p><strong class="label">What this is about:</strong> A functional equation restricts how a function behaves based on relationships between its inputs. This one involves evaluating the function at scaled arguments.</p>
+<p><strong class="label">Why it matters:</strong> Functional equations are common in Olympiad problems, physics (symmetry), and calculus (defining the exponential, etc.). Understanding how to “probe” the equation with clever substitutions is critical.</p>
+<p><strong class="label">What the problem is really asking:</strong> Find all real-valued functions f satisfying f(2x) = 4f(x) + 2x.</p>
+<p><strong class="label">The approachable idea:</strong> Try evaluating the function at specific values (like x = 0) to find structural constraints. The equation resembles behavior of quadratics: doubling the input multiplies some terms by 4, which hints at an x<sup>2</sup> component.</p>
+<p><strong class="label">Your task:</strong> Solve the functional equation fully — determine all real functions f: ℝ → ℝ satisfying f(2x) = 4f(x) + 2x.</p>
+</div>
+
+<div class="problem">
+<h2>Problem 5 — Ramsey Triangle (Graph Theory / Combinatorics)</h2>
+<p><strong class="label">What this is about:</strong> This is a classic small case of Ramsey theory — the idea that complete disorder is impossible when a structure grows large enough. With only 6 people, structure must emerge.</p>
+<p><strong class="label">Why it matters:</strong> Ramsey theory underpins graph theory, communication networks, logic, and many areas of pure math. The “friend/stranger” dichotomy is the foundational example.</p>
+<p><strong class="label">What the problem is really asking:</strong> You color each edge of a 6-person graph either red (friends) or blue (strangers). Show there must be a monochromatic triangle: three mutual friends or three mutual strangers.</p>
+<p><strong class="label">The approachable idea:</strong> Use the pigeonhole principle: pick one person. They are connected to 5 others. At least 3 edges must be the same color. Then analyze those 3 neighbors.</p>
+<p><strong class="label">Your task:</strong> Prove that in any 2-coloring of the edges of K<sub>6</sub> (the complete graph on 6 vertices), there is a monochromatic triangle.</p>
+</div>
+
+<div class="solution">
+<h2>SOLUTIONS — WEEK 2</h2>
+
+<h3>Solution 1 — Induction Inequality</h3>
+<p><strong class="label">(a) Base case.</strong> Check n = 5: 2<sup>5</sup> = 32 and 5<sup>2</sup> + 5 + 1 = 31, so 2<sup>5</sup> ≥ 5<sup>2</sup> + 5 + 1.</p>
+<p><strong class="label">(b) Induction step.</strong> Assume 2<sup>n</sup> ≥ n<sup>2</sup> + n + 1 for some n ≥ 5. Multiply both sides by 2:</p>
+<p>2<sup>n+1</sup> ≥ 2n<sup>2</sup> + 2n + 2.</p>
+<p>We want to show 2<sup>n+1</sup> ≥ (n+1)<sup>2</sup> + (n+1) + 1 = n<sup>2</sup> + 3n + 3.</p>
+<p>So it suffices to prove 2n<sup>2</sup> + 2n + 2 ≥ n<sup>2</sup> + 3n + 3, i.e. n<sup>2</sup> − n − 1 ≥ 0.</p>
+<p>The quadratic n<sup>2</sup> − n − 1 is positive for all n ≥ 2, so the induction step holds. Thus 2<sup>n</sup> ≥ n<sup>2</sup> + n + 1 for all n ≥ 5.</p>
+
+<h3>Solution 2 — Modular Squares</h3>
+<p>Consider n modulo 3. Every integer is congruent to 0, 1, or 2 (mod 3).</p>
+<ul>
+<li>If n ≡ 0 (mod 3), then n<sup>2</sup> ≡ 0 (mod 3).</li>
+<li>If n ≡ 1 (mod 3), then n<sup>2</sup> ≡ 1 (mod 3).</li>
+<li>If n ≡ 2 (mod 3), then n<sup>2</sup> ≡ 4 ≡ 1 (mod 3).</li>
+</ul>
+<p>Thus n<sup>2</sup> ≡ 0 or 1 (mod 3). In particular, n<sup>2</sup> can never be ≡ 2 (mod 3), so numbers of the form 3k + 2 are not perfect squares.</p>
+
+<h3>Solution 3 — Counting Seating Arrangements</h3>
+<p>Seats 1–3 are fixed as G1, G2, G3 in that order. Seats 4–5 must be filled by two blue-shirt students B1 and B2.</p>
+<p>There are 2! = 2 ways to permute B1 and B2 in seats 4 and 5. Thus there are exactly 2 valid arrangements.</p>
+
+<h3>Solution 4 — Functional Equation</h3>
+<p>We seek all real-valued functions f satisfying f(2x) = 4f(x) + 2x.</p>
+<p>Assume f is a polynomial of degree at most 2 and try f(x) = ax<sup>2</sup> + bx + c.</p>
+<p>Then f(2x) = 4ax<sup>2</sup> + 2bx + c, while 4f(x) + 2x = 4(ax<sup>2</sup> + bx + c) + 2x = 4ax<sup>2</sup> + 4bx + 4c + 2x.</p>
+<p>Equating coefficients gives:</p>
+<ul>
+<li>For x<sup>2</sup>: 4a = 4a (always true).</li>
+<li>For x: 2b = 4b + 2 ⇒ −2b = 2 ⇒ b = −1.</li>
+<li>For constants: c = 4c ⇒ −3c = 0 ⇒ c = 0.</li>
+</ul>
+<p>So f(x) = ax<sup>2</sup> − x for some real a. Substituting back confirms these all satisfy the equation. Hence all solutions are f(x) = ax<sup>2</sup> − x, with a any real constant.</p>
+
+<h3>Solution 5 — Ramsey Triangle</h3>
+<p>Model the situation as a complete graph K<sub>6</sub> whose vertices are the six people. Color an edge red if two people are friends and blue if they are strangers.</p>
+<p>Pick any person P. P is connected to 5 others, so among the 5 edges from P at least 3 have the same color by the pigeonhole principle.</p>
+<p>Assume at least 3 of these edges are red, connecting P to A, B, and C. Consider the triangle formed by A, B, and C.</p>
+<p>If any of AB, BC, or CA is red, then P together with that red edge forms a red triangle. If none of AB, BC, CA is red, then all three are blue, giving a blue triangle ABC.</p>
+<p>In either case, there is a monochromatic triangle. Thus any 2-coloring of the edges of K<sub>6</sub> contains a monochromatic triangle.</p>
+
+</div>
+</body>
+</html>
